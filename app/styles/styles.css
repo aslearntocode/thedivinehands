@@ -1,0 +1,1367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #FFD700;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+.hero {
+    padding: 5rem 5%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 2rem 5%;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #555;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.stat-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 200px;
+}
+
+.stat-card h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.how-it-works {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 2rem 5%;
+    border-radius: 10px;
+}
+
+.how-it-works h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    padding: 2rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.2rem;
+}
+
+.step h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.step p {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .logo span {
+        font-size: 1.2rem;
+    }
+}
+
+.chefs-section {
+    padding: 2rem 5%;
+}
+
+.chefs-section h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.chef-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.chef-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.chef-card:hover {
+    transform: translateY(-5px);
+}
+
+.chef-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.chef-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chef-info {
+    padding: 1.5rem;
+}
+
+.chef-info h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.chef-info .specialty {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.chef-info .description {
+    color: #777;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.menu-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #FFD700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #FFC800;
+}
+
+@media (max-width: 768px) {
+    .chef-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chef-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+.tiffin-section {
+    padding: 2rem 5%;
+}
+
+.tiffin-section h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.tiffin-intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.weekly-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    justify-items: center;
+}
+
+.day-menu {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.day-menu h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #FFD700;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.meal-type h3 {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.meal-type ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.meal-type ul li {
+    padding: 0.3rem 0;
+    color: #777;
+}
+
+.subscription-info {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.subscription-info h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.subscription-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.subscription-info ul li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.subscribe-button {
+    padding: 1rem 2rem;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.subscribe-button:hover {
+    background-color: #FFC800;
+}
+
+@media (max-width: 768px) {
+    .weekly-menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+.menu-filter {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.menu-filter label {
+    margin-right: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.menu-filter select {
+    width: 150px;
+    padding: 0.5rem;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    background-color: #fff;
+}
+
+.menu-filter select:hover {
+    border-color: #FFC800;
+}
+
+.menu-filter select:focus {
+    border-color: #FFC800;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+.day-menu[style*="display: block"] {
+    display: block !important;
+    margin: 0 auto 2rem auto;
+}
+
+.meal-type {
+    margin-bottom: 1.5rem;
+}
+
+.meal-type:last-child {
+    margin-bottom: 0;
+}
+
+.chef-profile {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.chef-header {
+    display: flex;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.chef-image-large {
+    flex: 0 0 400px;
+}
+
+.chef-image-large img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.chef-intro {
+    flex: 1;
+}
+
+.chef-intro h1 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.specialty-tag {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.chef-features {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.feature-badge {
+    background-color: #FFD700;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.chef-bio {
+    color: #666;
+    line-height: 1.6;
+}
+
+.menu-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.menu-category {
+    margin-bottom: 2rem;
+}
+
+.menu-category h3 {
+    color: #333;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #FFD700;
+    margin-bottom: 1.5rem;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-item {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item .price {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.special-notes {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.special-notes h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.special-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.special-notes ul li {
+    color: #666;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.special-notes ul li:before {
+    content: "•";
+    color: #FFD700;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+}
+
+@media (max-width: 768px) {
+    .chef-header {
+        flex-direction: column;
+    }
+    
+    .chef-image-large {
+        flex: 0 0 auto;
+    }
+    
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+.login-button {
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Adjust heading alignment */
+h1, h2, h3 {
+    text-align: left;
+}
+
+/* Adjust hero content alignment */
+.hero-content {
+    text-align: left;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-email {
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+.order-section {
+    display: none;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.order-button {
+    background-color: #FFD700;
+    color: #333;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.order-button:hover {
+    background-color: #FFC800;
+}
+
+/* Add these new styles for the order form */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.menu-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.menu-checkboxes div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+textarea#delivery-address {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="datetime-local"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Replace WhatsApp button styles with Place Order button styles */
+.place-order-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.place-order-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.place-order-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Add loading state styles */
+.place-order-button.loading {
+    background-color: #666;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Success message styles */
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1100;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Add styles for floating WhatsApp button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-whatsapp:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    color: white;
+    text-decoration: none;
+}
+
+/* Add these styles for the WhatsApp chat container */
+.whatsapp-chat-container {
+    position: fixed;
+    right: -400px; /* Start off-screen */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 80vh;
+    background: white;
+    border-radius: 10px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.whatsapp-chat-container.active {
+    right: 20px;
+}
+
+.chat-header {
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.close-chat:hover {
+    opacity: 0.8;
+}
+
+#whatsapp-iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .whatsapp-chat-container {
+        width: 100%;
+        height: 100vh;
+        right: -100%;
+        top: 0;
+        transform: none;
+    }
+
+    .whatsapp-chat-container.active {
+        right: 0;
+    }
+}
+
+/* Adjust the floating WhatsApp button position when chat is open */
+.whatsapp-chat-container.active + .floating-whatsapp {
+    right: 400px;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-chat-container.active + .floating-whatsapp {
+        display: none;
+    }
+}
+
+/* Update the chat container styles */
+.chat-content {
+    flex: 1;
+    padding: 20px;
+    background: #E5DDD5;
+    border-radius: 0 0 10px 10px;
+    overflow-y: auto;
+}
+
+.chat-preview {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.chat-message {
+    margin-bottom: 20px;
+}
+
+.chat-message p {
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.message-preview {
+    background: #DCF8C6;
+    padding: 15px;
+    border-radius: 10px;
+    color: #333;
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.proceed-to-whatsapp {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.proceed-to-whatsapp:hover {
+    background: #128C7E;
+}
+
+/* Add these new styles for the order modal */
+.order-now-button {
+    background-color: #FFD700;
+    color: #333;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s;
+}
+
+.order-now-button:hover {
+    background-color: #FFC800;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 10px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-header {
+    padding: 1rem 2rem;
+    background-color: #FFD700;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    color: #333;
+    margin: 0;
+}
+
+.close-modal {
+    color: #333;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #666;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.menu-items-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.menu-item-select {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-item-select:hover {
+    background-color: #f9f9f9;
+}
+
+.menu-item-select label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.item-price {
+    color: #666;
+    font-weight: 500;
+}
+
+.total-section {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.form-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal-header {
+        border-radius: 0;
+    }
+}
+
+/* Update these styles for a more prominent Order Now section */
+.order-cta-section {
+    margin: 3rem 0;
+    padding: 0 2rem;
+}
+
+.order-cta-card {
+    background: linear-gradient(135deg, #FFD700, #FFC800);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.order-cta-card:hover {
+    transform: translateY(-5px);
+}
+
+.order-cta-content h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.order-cta-content p {
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.order-now-button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.order-now-button:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.order-icon {
+    font-size: 1.4rem;
+}
+
+.order-arrow {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.order-now-button:hover .order-arrow {
+    transform: translateX(5px);
+}
+
+/* Add a pulsing animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+.order-now-button {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .order-cta-section {
+        padding: 0 1rem;
+    }
+
+    .order-cta-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .order-now-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Add styles for new form fields */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Loading state for button */
+.place-order-button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+.testimonial-carousel {
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+    background: #FFD700;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex !important;
+    width: 300%;
+    position: relative;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    flex: 0 0 33.333%;
+    width: 33.333%;
+    padding: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.quote {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.author {
+    display: block;
+    margin-top: 1rem;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.prev-btn,
+.next-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.cancel-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Update the existing submit button styles */
+.submit-button {
+    width: 100%;
+} 

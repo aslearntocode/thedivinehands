@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Bakers - HomeMade Delights</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Footer Styles */
+        .site-footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+            
+            .social-links {
+                align-items: center;
+            }
+            
+            .contact-info p {
+                justify-content: center;
+            }
+        }
+
+        /* Blur effect for the main content */
+        main {
+            /* Removing blur effect */
+            /* filter: blur(3px);
+            pointer-events: none; */
+        }
+
+        /* Coming soon notification banner */
+        .notification-banner {
+            position: fixed;
+            top: 80px; /* Position below navbar */
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 215, 0, 0.9); /* Golden yellow with slight transparency */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Animation for the banner */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .notification-banner {
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo {
+                font-size: 1rem;
+            }
+        }
+
+        /* Add these styles for the chef grid and cards */
+        .chef-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .chef-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .chef-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .chef-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .chef-info {
+            padding: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            .chef-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chef-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="public/images/TDH Logo.png" alt="The Divine Hands Logo" class="logo-img">
+                <span>The Divine Hands</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="chefs.html">Home Made Food</a></li>
+                <li><a href="bakers.html">Home Made Desserts</a></li>
+                <li><a href="tiffin.html">Tiffin Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chefs-section">
+            <h1>Our Featured Bakers</h1>
+            
+            <div class="chef-grid">
+                <!-- Baker 1 -->
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="public/images/Juhi_Kastiya.jpg" alt="Baker Juhi" 
+                             onerror="this.src='https://placehold.co/400x400?text=Baker+Juhi'">
+                    </div>
+                    <div class="chef-info">
+                        <h2>Baker Juhi Kastiya</h2>
+                        <p class="specialty">Specialty: Stuffed eggless breads</p>
+                        <!-- <p class="description">Specializing in guilt-free treats, Juhi creates delicious desserts using natural sweeteners and wholesome ingredients.</p> -->
+                        <a href="juhi-kastiya.html" class="menu-button">View Profile and Menu</a>
+                    </div>
+                </div>
+
+                <!-- Baker 2 -->
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="public/images/Ruchita_Shah.jpg" alt="Baker Ruchita">
+                    </div>
+                    <div class="chef-info">
+                        <h2>Baker Ruchita Shah</h2>
+                        <p class="specialty">Specialty: Healthy Treats</p>
+                        <!-- <p class="description">New baker joining our team soon!</p> -->
+                        <a href="ruchita-shah.html" class="menu-button">View Profile and Menu</a>
+                    </div>
+                </div>
+
+                <!-- Baker 3 -->
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="https://placehold.co/200x200?text=Coming+Soon" alt="Coming Soon">
+                    </div>
+                    <div class="chef-info">
+                        <h2>Coming Soon</h2>
+                        <p class="specialty">Specialty: TBA</p>
+                        <!-- <p class="description">New baker joining our team soon!</p> -->
+                        <a href="#" class="menu-button disabled">Profile Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <!-- Company Info Section -->
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <!-- <li><a href="/press">Press</a></li> -->
+                    <li><a href="/terms">Terms & Conditions</a></li>
+                    <!-- <li><a href="/privacy">Privacy Policy</a></li> -->
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <!-- <a href="https://facebook.com" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a> -->
+                    <a href="https://www.instagram.com/the.divine.hands?utm_source=qr&igsh=ZmYyd3hwbGlsNm1z" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <!-- <a href="https://twitter.com" target="_blank" rel="noopener">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a> -->
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +91 91360 33288</p>
+                    <p><i class="fas fa-envelope"></i> thedivinehands3@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 The Divine Hands. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+            }));
+        });
+    </script>
+</body>
+</html> 

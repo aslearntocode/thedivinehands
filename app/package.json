@@ -1,0 +1,19 @@
+{
+  "name": "foodsupply",
+  "version": "1.0.0",
+  "description": "Divine Hands Food Supply Website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server ./app -p 3000 --cors -c-1",
+    "start": "http-server ./app -p 3000 --cors -c-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^11.3.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

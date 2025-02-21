@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Divine Hands</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Remove Firebase and Supabase SDKs
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="styles/auth.css">
+    -->
+    <style>
+        .how-it-works h2,
+        .step h3,
+        .step p {
+            text-align: center;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+            
+            .social-links {
+                align-items: center;
+            }
+            
+            .contact-info p {
+                justify-content: center;
+            }
+        }
+
+        /* Stats Section Styles */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px 60px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h2 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .stat-card p {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .stats {
+                gap: 20px;
+            }
+            
+            .stat-card {
+                padding: 20px 40px;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            margin: 0; /* Reset any existing margins */
+        }
+
+        @media (max-width: 768px) {
+            .cta-buttons {
+                gap: 15px;
+            }
+        }
+
+        /* Notification Banner Styles */
+        .join-us-section {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .notification-banner {
+            position: relative;
+            background-color: #fff;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background-image: linear-gradient(135deg, #fff8e8 0%, #fff 100%);
+        }
+
+        .notification-content h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .notification-content p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .benefits {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .apply-button {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            background-color: #FFD700;
+            color: #333;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .apply-button:hover {
+            background-color: #FFC800;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .notification-banner {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+
+            .notification-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .notification-content p {
+                font-size: 1rem;
+            }
+
+            .benefits {
+                padding: 20px;
+            }
+        }
+
+        /* Add this at the beginning of your style section */
+        .notification-carousel {
+            background-color: #333;
+            padding: 12px 0;
+            text-align: center;
+            color: #FFD700;
+            font-weight: 600;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .notification-slide p {
+            margin: 0;
+            font-size: 1.3rem;
+            padding: 0 20px;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .notification-slide p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-wrapper {
+            position: relative;
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 12px 45px 12px 20px;
+            border: 2px solid #FFD700;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #searchInput:focus {
+            border-color: #FFC800;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-wrapper button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #666;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .search-wrapper button:hover {
+            color: #FFD700;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                padding: 15px;
+            }
+            
+            #searchInput {
+                padding: 10px 40px 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Update navbar styles for mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .mobile-nav-controls {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Update mobile nav controls */
+        .mobile-nav-controls {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-nav-controls {
+                display: flex;
+                right: 15px;
+                gap: 15px;
+            }
+
+            .mobile-nav-controls .hamburger {
+                position: static;
+                transform: none;
+            }
+
+            .navbar {
+                padding-right: 60px;
+            }
+        }
+
+        /* Add dropdown styles */
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%; /* This ensures dropdown appears below the profile */
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            z-index: 1000;
+            margin-top: 10px;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .dropdown-content .logout-btn {
+            border-top: 1px solid #eee;
+            color: #333; /* Explicitly set color to match other options */
+        }
+
+        /* Update user profile styles */
+        #userProfile {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #userProfile:hover {
+            background-color: #f5f5f5;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Add dropdown arrow */
+        .dropdown-arrow {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+
+        .dropdown-arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 45px;
+            }
+            
+            .logo {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="public/images/TDH Logo.png" alt="The Divine Hands Logo" class="logo-img">
+                <span>The Divine Hands</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="chefs.html">Home Made Food</a></li>
+                <li><a href="bakers.html">Home Made Desserts</a></li>
+                <li><a href="tiffin.html">Tiffin Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Notification carousel -->
+    <div class="notification-carousel">
+        <div class="notification-slide">
+            <p>🎉 Now serving within 5 kms of Parel, Mumbai! 🎉</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 style="text-align: center; margin-bottom: 2rem; color: #333;">Discover Authentic Home-Cooked Food</h1>
+                
+                <div class="cta-buttons">
+                    <a href="chefs.html" class="cta-button">Find Chefs</a>
+                    <a href="tiffin.html" class="cta-button">Find Tiffin Service</a>
+                    <a href="bakers.html" class="cta-button">Find Bakers</a>
+                </div>
+
+                <!-- Temporarily hidden search functionality
+                <form action="/search" method="GET" id="searchForm" style="margin-top: 2rem;">
+                    <div class="search-wrapper" style="margin: 0 auto;">
+                        <input type="text" id="searchInput" placeholder="Search by chef name, specialty, or menu items...">
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                -->
+
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3 style="text-align: center;">50+</h3>
+                <p>Home Chefs</p>
+            </div>
+            <div class="stat-card">
+                <h3 style="text-align: center;">1,000+</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-card">
+                <h3 style="text-align: center;">10+</h3>
+                <p>Areas Currently Being Served</p>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2 style="text-align: center;">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 style="text-align: center;">Browse Local Chefs</h3>
+                    <p style="text-align: center;">Explore menus from talented home chefs in your area</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 style="text-align: center;">Place Your Order for Lunch before 10 AM and for Dinner before 5 PM</h3>
+                    <p style="text-align: center;">Select your favorite dishes and place your order</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 style="text-align: center;">Enjoy Home Cooked Food</h3>
+                    <p style="text-align: center;">Receive fresh, home-cooked meals delivered to your doorstep</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Us Section -->
+        <section class="join-us-section">
+            <div class="notification-banner">
+                <div class="notification-content">
+                    <h3>🍴 Calling All Home Chefs & Bakers! 🍰</h3>
+                    <p>Do you have a passion for cooking or baking? We want YOU to join our marketplace! We're looking for talented home chefs and bakers who pour their love for food into every dish they create.</p>
+                    <p class="benefits">
+                        🌟 Why Join Us?<br>
+                        • Showcase your culinary skills to a broader audience<br>
+                        • Connect with food lovers who appreciate homemade goodness<br>
+                        • Earn from your passion, while working from your own kitchen
+                    </p>
+                    <a href="apply.html" class="apply-button">Apply Now</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="testimonial-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="testimonial-card">
+                        <p class="quote">"This service was excellent. Couldn't be happier with the food delivered to my home!"</p>
+                        <p class="author">- Parth Patel</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"The food was delicious and the service was great!"</p>
+                        <p class="author">- Raj Joshi</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"The food was delicious and the service was great!"</p>
+                        <p class="author">- Emily Chen</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev-btn" aria-label="Previous">❮</button>
+                <button class="next-btn" aria-label="Next">❯</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <!-- Company Info Section -->
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <!-- <li><a href="/press">Press</a></li> -->
+                    <li><a href="/terms">Terms & Conditions</a></li>
+                    <!-- <li><a href="/privacy">Privacy Policy</a></li> -->
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <!-- <a href="https://facebook.com" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a> -->
+                    <a href="https://www.instagram.com/the.divine.hands?utm_source=qr&igsh=ZmYyd3hwbGlsNm1z" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <!-- <a href="https://twitter.com" target="_blank" rel="noopener">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a> -->
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +91 91360 33288</p>
+                    <p><i class="fas fa-envelope"></i> thedivinehands3@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Divine Hands. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+            }));
+
+            /* Temporarily commented out search functionality
+            const searchForm = document.getElementById('searchForm');
+            const searchInput = document.getElementById('searchInput');
+
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                if (searchTerm === 'urmila') {
+                    window.location.href = 'chef_urmila.html';
+                } else {
+                    alert('Search functionality is under development. Try searching for "urmila"');
+                }
+            });
+            */
+        });
+
+        /* Remove Supabase and order-related code
+        const supabaseUrl = 'YOUR_SUPABASE_URL'
+        const supabaseKey = 'YOUR_SUPABASE_ANON_KEY'
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+
+        async function saveOrder(orderData) {
+            try {
+                const user = auth.currentUser;
+                if (!user) {
+                    alert('Please login to place an order');
+                    return;
+                }
+
+                const orderObject = {
+                    user_id: user.uid,
+                    user_email: user.email,
+                    order_details: {
+                        ...orderData,
+                        timestamp: new Date().toISOString()
+                    }
+                };
+
+                const { data, error } = await supabase
+                    .from('orders')
+                    .insert([orderObject]);
+
+                if (error) throw error;
+
+                alert('Order placed successfully!');
+                return data[0].id;
+            } catch (error) {
+                console.error('Error saving order:', error);
+                alert('Error placing order. Please try again.');
+            }
+        }
+        */
+    </script>
+</body>
+</html> 

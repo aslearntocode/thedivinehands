@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - The Divine Hands</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <style>
+        .orders-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .order-items {
+            margin: 15px 0;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .order-status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status-confirmed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-delivered {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+
+        .no-orders {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add your header/navbar here -->
+    
+    <div class="orders-container">
+        <h1>My Orders</h1>
+        <div id="ordersList">
+            <!-- Orders will be populated here -->
+        </div>
+    </div>
+
+    <script>
+        // Initialize Firebase with your config
+        const firebaseConfig = {
+            // Your Firebase config here
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // Function to format date
+        function formatDate(timestamp) {
+            return new Date(timestamp).toLocaleString();
+        }
+
+        // Function to load and display orders
+        async function loadOrders() {
+            const ordersList = document.getElementById('ordersList');
+            const user = auth.currentUser;
+
+            if (!user) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            try {
+                const ordersSnapshot = await db.collection('orders')
+                    .where('userId', '==', user.uid)
+                    .orderBy('timestamp', 'desc')
+                    .get();
+
+                if (ordersSnapshot.empty) {
+                    ordersList.innerHTML = `
+                        <div class="no-orders">
+                            <h3>No orders yet</h3>
+                            <p>Your orders will appear here once you place them.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                ordersList.innerHTML = '';
+                ordersSnapshot.forEach(doc => {
+                    const order = doc.data();
+                    const orderCard = `
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div>
+                                    <h3>Order #${doc.id.slice(-6)}</h3>
+                                    <p>Placed on: ${formatDate(order.timestamp?.toDate())}</p>
+                                </div>
+                                <span class="order-status status-${order.status?.toLowerCase()}">${order.status}</span>
+                            </div>
+                            <div class="order-items">
+                                ${order.items.map(item => `
+                                    <div class="order-item">
+                                        <span>${item.name} x${item.quantity}</span>
+                                        <span>₹${item.price * item.quantity}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="order-footer">
+                                <strong>Total: ₹${order.totalAmount}</strong>
+                            </div>
+                        </div>
+                    `;
+                    ordersList.innerHTML += orderCard;
+                });
+            } catch (error) {
+                console.error('Error loading orders:', error);
+                ordersList.innerHTML = '<p>Error loading orders. Please try again later.</p>';
+            }
+        }
+
+        // Check auth state and load orders
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                loadOrders();
+            } else {
+                window.location.href = 'index.html';
+            }
+        });
+
+        // Function to save order to Firestore
+        async function saveOrder(orderData) {
+            try {
+                const user = auth.currentUser;
+                if (!user) {
+                    alert('Please login to place an order');
+                    return;
+                }
+
+                const orderRef = await db.collection('orders').add({
+                    userId: user.uid,
+                    userEmail: user.email,
+                    ...orderData,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+                alert('Order placed successfully!');
+                return orderRef.id;
+            } catch (error) {
+                console.error('Error saving order:', error);
+                alert('Error placing order. Please try again.');
+            }
+        }
+
+        // Example usage
+        const orderData = {
+            items: [
+                { name: "Dish Name", quantity: 2, price: 150 },
+                { name: "Another Dish", quantity: 1, price: 200 }
+            ],
+            chefId: "chef_id_here",
+            chefName: "Chef Name",
+            totalAmount: 500,
+            status: "Pending",
+            deliveryAddress: "User's delivery address",
+            // Add any other relevant order details
+        };
+
+        saveOrder(orderData);
+    </script>
+</body>
+</html> 

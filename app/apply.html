@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - The Divine Hands</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .application-form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .application-form h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 5px rgba(255,215,0,0.3);
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 5px rgba(255,215,0,0.3);
+        }
+
+        .submit-button {
+            background-color: #FFD700;
+            color: #333;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #FFC800;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        .required {
+            color: #ff0000;
+        }
+
+        @media (max-width: 768px) {
+            .application-form-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+
+        /* Success Message Overlay Styles */
+        .success-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success-message {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            margin: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .success-message h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .success-message p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* File Input Styles */
+        .file-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+        }
+
+        .file-help {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Style the file input button */
+        .file-input::-webkit-file-upload-button {
+            background-color: #FFD700;
+            color: #333;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .file-input::-webkit-file-upload-button:hover {
+            background-color: #FFC800;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <img src="public/images/TDH Logo.png" alt="The Divine Hands Logo" style="height: 50px; margin-right: 10px;">
+                    <span>The Divine Hands</span>
+                </a>
+            </div>
+            <button class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="chefs.html">Home Made Food</a></li>
+                <li><a href="bakers.html">Home Made Desserts</a></li>
+                <li><a href="tiffin.html">Tiffin Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="application-form-container">
+            <form class="application-form" id="chefApplicationForm" action="https://formsubmit.co/thedivinehands3@gmail.com" method="POST">
+                <h1>Chef/Baker Application</h1>
+                
+                <!-- Update FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New Chef/Baker Application">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://thedivinehands.com/index.html">
+                <!-- Add autoresponse for confirmation email -->
+                <input type="hidden" name="_autoresponse" value="Thank you for applying to The Divine Hands! We have received your application and will contact you soon.">
+                
+                <div class="form-group">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="mobile" name="Mobile Number" pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Years of Experience in Cooking/Baking <span class="required">*</span></label>
+                    <input type="number" id="experience" name="Years of Experience" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="currentlySupplying">Currently Supplying Food? <span class="required">*</span></label>
+                    <select id="currentlySupplying" name="Currently Supplying Food" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Home Pick-up Location (Locality) <span class="required">*</span></label>
+                    <input type="text" id="location" name="Home Pick-up Location" placeholder="e.g., Parel" required>
+                </div>
+
+                <!-- Add Specialty field -->
+                <div class="form-group">
+                    <label for="specialty">Specialty <span class="required">*</span></label>
+                    <input type="text" id="specialty" name="Specialty" placeholder="e.g., North Indian, Desserts, Multi Cuisine" required>
+                </div>
+
+                <!-- Add Introduction field -->
+                <div class="form-group">
+                    <label for="introduction">Introduce Yourself (2-3 lines) <span class="required">*</span></label>
+                    <textarea id="introduction" name="Introduction" rows="3" placeholder="Tell us about your cooking journey and passion" required></textarea>
+                </div>
+
+                <!-- Add Photo Upload field -->
+                <div class="form-group">
+                    <label for="photo">Upload Your Photo (Optional)</label>
+                    <input 
+                        type="file" 
+                        id="photo" 
+                        name="Photo" 
+                        accept="image/*"
+                        class="file-input"
+                    >
+                    <p class="file-help">Maximum file size: 25MB. Supported formats: JPG, PNG</p>
+                </div>
+
+                <!-- Add this before the submit button -->
+                <div style="display: flex; gap: 20px; margin-top: 20px;">
+                    <button type="submit" class="submit-button">Submit Application</button>
+                    <a href="index.html" class="cancel-button" style="
+                        background-color: #666;
+                        color: white;
+                        padding: 15px 30px;
+                        border: none;
+                        border-radius: 30px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        width: 100%;
+                        text-align: center;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    ">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Add this before closing body tag -->
+    <div class="success-overlay">
+        <div class="success-message">
+            <h2>Thank You for Applying!</h2>
+            <p>We will soon reach out to you to initiate the onboarding process.</p>
+            <p class="countdown">Redirecting in <span id="countdown">5</span> seconds...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('chefApplicationForm');
+            if (form) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
+                    
+                    // Show success message
+                    showSuccessMessage();
+                    
+                    // Submit the form data
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    }).then(() => {
+                        // Redirect after 5 seconds
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 5000);
+                    });
+                });
+            }
+        });
+
+        function showSuccessMessage() {
+            const overlay = document.querySelector('.success-overlay');
+            if (overlay) {
+                overlay.style.display = 'flex';
+                
+                let timeLeft = 5;
+                const countdownElement = document.getElementById('countdown');
+                
+                if (countdownElement) {
+                    const countdown = setInterval(() => {
+                        timeLeft--;
+                        countdownElement.textContent = timeLeft;
+                        
+                        if (timeLeft <= 0) {
+                            clearInterval(countdown);
+                            window.location.href = 'index.html';
+                        }
+                    }, 1000);
+                }
+            }
+        }
+
+        // Hamburger menu functionality
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+            }));
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Chefs - HomeMade Delights</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="public/images/TDH Logo.png" alt="The Divine Hands Logo" class="logo-img">
+                <span>The Divine Hands</span>
+            </a>
+            <div class="mobile-nav-controls">
+                <button class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="chefs.html">Home Made Food</a></li>
+                <li><a href="bakers.html">Home Made Desserts</a></li>
+                <li><a href="tiffin.html">Tiffin Service</a></li>
+            </ul>
+        </nav>      
+    </header>
+
+    <main>
+        <section class="chefs-section">
+            <h1>Our Featured Chefs</h1>
+            
+            <div class="chef-grid">
+                <!-- Chef 1 -->
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="public/images/chef_urmila.png" alt="Chef Urmila Saud" 
+                             onerror="this.src='https://placehold.co/400x400?text=Chef+Urmila'">
+                    </div>
+                    <div class="chef-info">
+                        <h2>Chef Urmila Saud</h2>
+                        <p class="specialty">Specialty: Mutli Cuisine</p>
+                        <!-- <p class="description">With 15 years of experience in authentic Italian cooking, Sarah brings the taste of Naples to your doorstep.</p> -->
+                        <a href="chef-urmila.html" class="menu-button">View Profile and Menu</a>
+                        <!-- <a href="#" class="menu-button">View Menu</a> -->
+                    </div>
+                </div>
+
+                <!-- Chef 2 -->
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="public/images/Anjali_Broor.jpeg" alt="Chef Anjali Broor">
+                    </div>
+                    <div class="chef-info">
+                        <h2>Chef Anjali Broor</h2>
+                        <p class="specialty">Specialty: Multi Cuisine</p>
+                        <!-- <p class="description">With 9+ years of experience, Anjali brings a unique dining experience with her authentic Multi Cuisine.</p> -->
+                        <a href="chef-anjali.html" class="menu-button">View Profile and Menu</a>
+                        <!-- <a href="#" class="menu-button">View Menu</a> -->
+                    </div>
+                </div>
+
+                <!-- Chef 3 -->
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="https://placehold.co/200x200" alt="Chef Payal">
+                    </div>
+                    <div class="chef-info">
+                        <h2>Chef Payal</h2>
+                        <p class="specialty">Specialty: Home Like Thali</p>
+                        <!-- <p class="description">Maria's authentic Mexican recipes have been passed down through generations in her family.</p> -->
+                        <a href="chef-payal.html" class="menu-button">View Profile and Menu</a>
+                    </div>
+                </div>
+
+                <!-- Chef 4 -->
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="https://placehold.co/200x200" alt="Chef Nani's Kitchen">
+                    </div>
+                    <div class="chef-info">
+                        <h2>Chef Nani's Kitchen</h2>
+                        <p class="specialty">Specialty: American BBQ</p>
+                        <!-- <p class="description">Master of the grill, David specializes in smoked meats and traditional American BBQ.</p> -->
+                        <!-- <a href="#" class="menu-button">View Menu</a> -->
+                    </div>
+                </div>
+
+                <!-- Chef 5 -->
+                <div class="chef-card">
+                    <div class="chef-image">
+                        <img src="https://placehold.co/200x200" alt="Chef Priya">
+                    </div>
+                    <div class="chef-info">
+                        <h2>Chef Priya Patel</h2>
+                        <p class="specialty">Specialty: Indian Cuisine</p>
+                        <!-- <p class="description">Bringing authentic Indian flavors with a modern twist, Priya's dishes are a perfect blend of spices.</p> -->
+                        <!-- <a href="#" class="menu-button">View Menu</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add this just before </body> tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+            }));
+        });
+    </script>
+
+    <style>
+    .chef-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .chef-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .chef-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .chef-info {
+        padding: 20px;
+    }
+
+    /* Footer Styles */
+    .site-footer {
+        background-color: #333;
+        color: #fff;
+        padding: 40px 0 20px;
+        margin-top: 60px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer-section h3 {
+        color: #FFD700;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+        color: #FFD700;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-info p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #555;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            text-align: center;
+        }
+        
+        .social-links {
+            align-items: center;
+        }
+        
+        .contact-info p {
+            justify-content: center;
+        }
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .logo-img {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+        margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .logo-img {
+            height: 45px;
+        }
+        
+        .logo {
+            font-size: 1rem;
+        }
+    }
+    </style>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <!-- Company Info Section -->
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <!-- <li><a href="/press">Press</a></li> -->
+                    <li><a href="/terms">Terms & Conditions</a></li>
+                    <!-- <li><a href="/privacy">Privacy Policy</a></li> -->
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <!-- <a href="https://facebook.com" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a> -->
+                    <a href="https://www.instagram.com/the.divine.hands?utm_source=qr&igsh=ZmYyd3hwbGlsNm1z" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <!-- <a href="https://twitter.com" target="_blank" rel="noopener">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a> -->
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +91 91360 33288</p>
+                    <p><i class="fas fa-envelope"></i> thedivinehands3@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Divine Hands. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
