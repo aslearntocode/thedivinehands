@@ -2,11 +2,9 @@
   "name": "foodsupply",
   "version": "1.0.0",
   "description": "Divine Hands Food Supply Website",
-  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "echo 'No build step needed for static HTML'",
-    "start": "serve ."
+    "build": "cp -r app/* .",
+    "start": "serve app"
   },
   "dependencies": {
     "firebase": "^11.3.1"
