@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "Divine Hands Food Supply Website",
   "scripts": {
-    "build": "cp -r app/* .",
-    "start": "serve app"
+    "dev": "npx live-server app --port=3001",
+    "start": "npx live-server app --port=3001",
+    "build": "echo 'No build step needed for static HTML'"
   },
   "dependencies": {
     "firebase": "^11.3.1"
   },
   "devDependencies": {
-    "http-server": "^14.1.1",
-    "serve": "^14.2.4"
+    "live-server": "^1.2.2"
   },
   "keywords": [],
   "author": "",
