@@ -186,17 +186,37 @@
 
             // Calculate total
             function calculateTotal() {
-                let total = 0;
+                let subtotal = 0;
                 const menuItems = document.querySelectorAll('input[name="menu-items"]');
                 
                 menuItems.forEach(item => {
                     if (item.checked) {
                         const quantity = parseInt(item.parentElement.querySelector('.quantity-input').value) || 1;
                         const price = parseInt(item.dataset.price);
-                        total += price * quantity;
+                        subtotal += price * quantity;
                     }
                 });
 
+                // Get or create delivery fee elements
+                let deliveryFeeElement = document.getElementById('delivery-fee');
+                if (!deliveryFeeElement) {
+                    const totalSection = document.querySelector('.total-section');
+                    deliveryFeeElement = document.createElement('div');
+                    deliveryFeeElement.id = 'delivery-fee';
+                    deliveryFeeElement.style.marginBottom = '10px';
+                    totalSection.insertBefore(deliveryFeeElement, totalSection.lastElementChild);
+                }
+
+                // Calculate and display delivery fee based on subtotal
+                let deliveryFee = 0;
+                if (subtotal < 1000) {
+                    deliveryFee = 100;
+                    deliveryFeeElement.innerHTML = `Delivery Fee: ₹${deliveryFee}`;
+                } else {
+                    deliveryFeeElement.innerHTML = `Delivery Fee: <strike>₹100</strike> FREE`;
+                }
+
+                const total = subtotal + deliveryFee;
                 document.getElementById('total-amount').textContent = `₹${total}`;
                 document.getElementById('total-amount-input').value = total;
             }

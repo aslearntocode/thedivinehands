@@ -184,19 +184,28 @@
                 });
             });
 
-            // Calculate total
+            // Calculate total with delivery fee
             function calculateTotal() {
-                let total = 0;
-                const menuItems = document.querySelectorAll('input[name="menu-items"]');
+                let subtotal = 0;
+                const selectedItems = document.querySelectorAll('input[name="menu-items"]:checked');
                 
-                menuItems.forEach(item => {
-                    if (item.checked) {
-                        const quantity = parseInt(item.parentElement.querySelector('.quantity-input').value) || 1;
-                        const price = parseInt(item.dataset.price);
-                        total += price * quantity;
-                    }
+                selectedItems.forEach(item => {
+                    const quantity = parseInt(item.parentElement.querySelector('.quantity-input').value);
+                    subtotal += parseInt(item.dataset.price) * quantity;
                 });
 
+                // Add delivery fee if subtotal is less than ₹1000
+                const deliveryFee = subtotal < 1000 ? 100 : 0;
+
+                // Update delivery fee display
+                const deliveryFeeElement = document.getElementById('delivery-fee');
+                if (subtotal >= 1000) {
+                    deliveryFeeElement.innerHTML = '<span style="text-decoration: line-through;">₹100</span> FREE';
+                } else {
+                    deliveryFeeElement.textContent = `₹${deliveryFee}`;
+                }
+
+                const total = subtotal + deliveryFee;
                 document.getElementById('total-amount').textContent = `₹${total}`;
                 document.getElementById('total-amount-input').value = total;
             }
@@ -432,8 +441,14 @@
                             <input type="datetime-local" id="delivery-time" name="deliveryTime" required>
                         </div> -->
                         <div class="total-section">
-                            <span>Total Amount: </span>
-                            <span id="total-amount">₹0</span>
+                            <div class="fee-line">
+                                <span>Delivery Fee: </span>
+                                <span id="delivery-fee">₹100</span>
+                            </div>
+                            <div class="total-line">
+                                <span>Total Amount: </span>
+                                <span id="total-amount">₹0</span>
+                            </div>
                             <input type="hidden" id="total-amount-input" name="totalAmount" value="0">
                         </div>
                     </div>

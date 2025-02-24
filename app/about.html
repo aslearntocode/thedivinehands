@@ -13,9 +13,9 @@
         }
 
         .about-section {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 60px auto;
-            padding: 40px;
+            padding: 40px 60px;
             background-color: white;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -183,13 +183,78 @@
             font-weight: 500;
         }
 
+        /* Mobile styles */
         @media (max-width: 768px) {
             .logo-img {
-                height: 60px;
+                height: 45px;
             }
             
             .logo {
                 font-size: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .mobile-nav-controls {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+            
+            .navbar {
+                padding-right: 60px;
+            }
+        }
+
+        /* Mobile nav controls */
+        .mobile-nav-controls {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-nav-controls {
+                display: flex;
+                right: 15px;
+                gap: 15px;
+            }
+
+            .mobile-nav-controls .hamburger {
+                position: static;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                margin: 30px 20px;
+                padding: 30px;
             }
         }
     </style>
