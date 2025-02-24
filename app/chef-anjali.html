@@ -325,6 +325,29 @@
                 input.addEventListener('change', calculateTotal);
                 input.addEventListener('input', calculateTotal);
             });
+
+            // Add this to the DOMContentLoaded event listener in each file
+            const areaInput = document.getElementById('area');
+            const cityInput = document.getElementById('city');
+            const stateInput = document.getElementById('state');
+            const addressDetails = document.getElementById('address-details');
+            const deliveryAddress = document.getElementById('delivery-address');
+
+            function updateAddress() {
+                const area = areaInput.value.trim();
+                const city = cityInput.value;
+                const state = stateInput.value;
+                
+                if (area) {
+                    const fullAddress = `${area}, ${city}, ${state}`;
+                    deliveryAddress.value = fullAddress;
+                    addressDetails.style.display = 'block';
+                } else {
+                    addressDetails.style.display = 'none';
+                }
+            }
+
+            areaInput.addEventListener('input', updateAddress);
         });
     </script>
 
@@ -443,17 +466,23 @@
                             <input type="tel" id="customer-phone" name="customerPhone" required>
                         </div>
                         <div class="form-group">
-                            <label for="delivery-address">Delivery Address:</label>
-                            <textarea id="delivery-address" name="deliveryAddress" required></textarea>
-                        </div>
-                        <!-- <div class="form-group">
-                            <label for="delivery-address">Delivery Address:</label>
-                            <textarea id="delivery-address" name="deliveryAddress" required></textarea>
+                            <label for="area">Area/Locality:</label>
+                            <input type="text" id="area" name="area" required>
                         </div>
                         <div class="form-group">
-                            <label for="delivery-time">Preferred Delivery Time:</label>
-                            <input type="datetime-local" id="delivery-time" name="deliveryTime" required>
-                        </div> -->
+                            <label for="city">City:</label>
+                            <input type="text" id="city" name="city" value="Mumbai" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State:</label>
+                            <input type="text" id="state" name="state" value="Maharashtra" readonly>
+                        </div>
+                        <div class="address-details" id="address-details" style="display: none;">
+                            <div class="form-group">
+                                <label for="delivery-address">Complete Address:</label>
+                                <textarea id="delivery-address" name="deliveryAddress" readonly></textarea>
+                            </div>
+                        </div>
                         <div class="total-section">
                             <span>Total Amount: </span>
                             <span id="total-amount">₹0</span>
