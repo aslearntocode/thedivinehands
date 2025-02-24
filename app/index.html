@@ -257,10 +257,10 @@
             }
         }
 
-        /* Add this at the beginning of your style section */
+        /* Update notification carousel styles */
         .notification-carousel {
             background-color: #333;
-            padding: 12px 0;
+            padding: 8px 0;  /* Reduced padding */
             text-align: center;
             color: #FFD700;
             font-weight: 600;
@@ -269,8 +269,9 @@
 
         .notification-slide p {
             margin: 0;
-            font-size: 1.3rem;
+            font-size: 1.1rem;  /* Reduced from 1.3rem */
             padding: 0 20px;
+            line-height: 1.4;  /* Added for better spacing between lines */
         }
 
         @keyframes slideIn {
@@ -286,7 +287,7 @@
 
         @media (max-width: 768px) {
             .notification-slide p {
-                font-size: 1.1rem;
+                font-size: 0.9rem;  /* Reduced from 1.1rem for mobile */
             }
         }
 
@@ -594,7 +595,8 @@
     <!-- Notification carousel -->
     <div class="notification-carousel">
         <div class="notification-slide">
-            <p>🎉 Now serving in Mumbai! 🎉</p>
+            <p>🎉 Now serving in Mumbai!</p>
+            <p>Delivery Charges: Within 5km ₹50 (Free above ₹750) | 5-10km ₹100 (Free above ₹1250) 🚚</p>
         </div>
     </div>
 
