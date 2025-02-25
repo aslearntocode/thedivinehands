@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chef Urmila Saud - Divine Hands</title>
+    <title>Chef Manmeet Kaur - Divine Hands</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -41,14 +41,16 @@
                 </div>
                 <div class="chef-intro">
                     <h1>Chef Manmeet Kaur</h1>
-                    <p class="specialty-tag">North Indian Meals and Snacks</p>
+                    <p class="specialty-tag">Multi Cuisine Expert</p>
                     <div class="chef-features">
-                        <span class="feature-badge">20+ Years Experience</span>
-                        <!-- <span class="feature-badge">Jain Food Available</span>
-                        <span class="feature-badge">Customized Menus</span> -->
+                        <span class="feature-badge">15+ Years Experience</span>
+                        <span class="feature-badge">Jain Food Available</span>
+                        <span class="feature-badge">Customized Menus</span>
                     </div>
                     <p class="chef-bio">
                         My children are so fond of cooking that eating outside and junk food are like a punihsment for them.
+
+
                     </p>
                 </div>
             </div>
@@ -70,155 +72,96 @@
 
             <div class="menu-section">
                 <h2>Menu Selection</h2>
-                <form id="menuForm" action="https://formsubmit.co/thedivinehands3@gmail.com" method="POST" class="menu-form">
-                    <!-- Add these hidden fields for FormSubmit configuration -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="New Order from Divine Hands">
-                    <input type="hidden" name="_autoresponse" value="Thank you for your order! We will deliver your order at the specified time.">
+                <div class="menu-layout">
+                    <form id="menuForm" class="menu-form">
+                        <!-- Starters -->
+                        <div class="menu-category">
+                            <h3>Starters</h3>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="item-controls">
+                                        <input type="checkbox" id="dal-makhani" name="items" value="Dal Makhani" data-price="349">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Dal Makhani</h4>
+                                        <p>Creamy black lentils slow-cooked with butter and spices</p>
+                                        <span class="price">₹349</span>
+                                    </div>
+                                    <div class="quantity-wrapper">
+                                        <input type="number" class="quantity-input" min="1" value="1">
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="item-controls">
+                                        <input type="checkbox" id="paneer-butter-masala" name="items" value="Paneer Butter Masala" data-price="399">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Paneer Butter Masala</h4>
+                                        <p>Cottage cheese cubes in rich tomato gravy</p>
+                                        <span class="price">₹399</span>
+                                    </div>
+                                    <div class="quantity-wrapper">
+                                        <input type="number" class="quantity-input" min="1" value="1">
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="item-controls">
+                                        <input type="checkbox" id="veg-biryani" name="items" value="Veg Biryani" data-price="449">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Veg Biryani</h4>
+                                        <p>Fragrant rice cooked with mixed vegetables and aromatic spices</p>
+                                        <span class="price">₹449</span>
+                                    </div>
+                                    <div class="quantity-wrapper">
+                                        <input type="number" class="quantity-input" min="1" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Desserts -->
+                        <div class="menu-category">
+                            <h3>Desserts</h3>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="item-controls">
+                                        <input type="checkbox" id="gulab-jamun" name="items" value="Gulab Jamun" data-price="199">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Gulab Jamun</h4>
+                                        <p>Soft milk dumplings in sugar syrup</p>
+                                        <span class="price">₹199</span>
+                                    </div>
+                                    <div class="quantity-wrapper">
+                                        <input type="number" class="quantity-input" min="1" value="1">
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="item-controls">
+                                        <input type="checkbox" id="rasmalai" name="items" value="Rasmalai" data-price="249">
+                                    </div>
+                                    <div class="item-details">
+                                        <h4>Rasmalai</h4>
+                                        <p>Cottage cheese patties in sweetened milk with nuts</p>
+                                        <span class="price">₹249</span>
+                                    </div>
+                                    <div class="quantity-wrapper">
+                                        <input type="number" class="quantity-input" min="1" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     
-                    <!-- Add hidden field for order details -->
-                    <input type="hidden" name="orderDetails" id="orderDetails" value="">
-                    
-                    <!-- Starters -->
-                    <div class="menu-category">
-                        <h3>Starters</h3>
-                        <div class="menu-items">
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="paneer-tikka" name="items" value="Paneer Tikka" data-price="299">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Paneer Tikka</h4>
-                                    <p>Marinated cottage cheese grilled to perfection with Indian spices</p>
-                                    <span class="price">₹299</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="spring-rolls" name="items" value="Veg Spring Rolls" data-price="249">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Veg Spring Rolls</h4>
-                                    <p>Crispy rolls filled with mixed vegetables and Asian spices</p>
-                                    <span class="price">₹249</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="mushroom-galouti" name="items" value="Mushroom Galouti" data-price="279">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Mushroom Galouti</h4>
-                                    <p>Melt-in-mouth mushroom patties with aromatic spices</p>
-                                    <span class="price">₹279</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Main Course -->
-                    <div class="menu-category">
-                        <h3>Main Course</h3>
-                        <div class="menu-items">
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="dal-makhani" name="items" value="Dal Makhani" data-price="349">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Dal Makhani</h4>
-                                    <p>Creamy black lentils slow-cooked with butter and spices</p>
-                                    <span class="price">₹349</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="paneer-butter-masala" name="items" value="Paneer Butter Masala" data-price="399">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Paneer Butter Masala</h4>
-                                    <p>Cottage cheese cubes in rich tomato gravy</p>
-                                    <span class="price">₹399</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="veg-biryani" name="items" value="Veg Biryani" data-price="449">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Veg Biryani</h4>
-                                    <p>Fragrant rice cooked with mixed vegetables and aromatic spices</p>
-                                    <span class="price">₹449</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Desserts -->
-                    <div class="menu-category">
-                        <h3>Desserts</h3>
-                        <div class="menu-items">
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="gulab-jamun" name="items" value="Gulab Jamun" data-price="199">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Gulab Jamun</h4>
-                                    <p>Soft milk dumplings in sugar syrup</p>
-                                    <span class="price">₹199</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="rasmalai" name="items" value="Rasmalai" data-price="249">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Rasmalai</h4>
-                                    <p>Cottage cheese patties in sweetened milk with nuts</p>
-                                    <span class="price">₹249</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-controls">
-                                    <input type="checkbox" id="gajar-ka-halwa" name="items" value="Gajar Ka Halwa" data-price="229">
-                                </div>
-                                <div class="item-details">
-                                    <h4>Gajar Ka Halwa</h4>
-                                    <p>Traditional carrot pudding with nuts</p>
-                                    <span class="price">₹229</span>
-                                </div>
-                                <div class="quantity-wrapper">
-                                    <input type="number" class="quantity-input" min="1" value="1">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- Move cart-summary outside the form but inside menu-layout -->
                     <div class="cart-summary">
+                        <div class="selected-items" id="selected-items">
+                            <!-- Selected items will be displayed here -->
+                        </div>
                         <div class="summary-item">
                             <span>Subtotal:</span>
                             <span id="subtotal">₹0</span>
@@ -231,35 +174,12 @@
                             <span>Total:</span>
                             <span id="total">₹0</span>
                         </div>
-                        <button type="submit" class="add-to-cart-btn">Place Order</button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Replace the existing Order Now button with this new section -->
-            <div class="order-cta-section">
-                <div class="order-cta-card">
-                    <div class="order-cta-content">
-                        <h2>Ready to Order?</h2>
-                        <p>Explore Chef Urmila's special menu and place your order now</p>
-                        <button class="order-now-button order-trigger">
-                            <span class="order-icon">🍽️</span>
-                            ORDER NOW
-                            <span class="order-arrow">→</span>
-                        </button>
+                        <button type="button" class="add-to-cart-btn">Place Order</button>
                     </div>
                 </div>
             </div>
 
-            <div class="special-notes">
-                <h3>Special Notes</h3>
-                <ul>
-                    <li>All dishes can be customized to Jain preferences</li>
-                    <li>Advance booking required for special occasions</li>
-                    <li>Minimum order value: ₹999</li>
-                    <li>Free delivery within 5km radius</li>
-                </ul>
-            </div>
+
         </section>
     </main>
 
@@ -295,7 +215,8 @@
 
             function updateTotal() {
                 let subtotal = 0;
-                const selectedItems = [];
+                const selectedItemsContainer = document.getElementById('selected-items');
+                selectedItemsContainer.innerHTML = ''; // Clear previous items
 
                 menuItems.forEach(item => {
                     const checkbox = item.querySelector('input[type="checkbox"]');
@@ -305,32 +226,24 @@
                         const price = parseInt(checkbox.dataset.price);
                         const quantity = parseInt(quantityInput.value) || 1;
                         const itemTotal = price * quantity;
-                        
-                        selectedItems.push({
-                            name: checkbox.value,
-                            quantity: quantity,
-                            price: price,
-                            total: itemTotal
-                        });
-                        
                         subtotal += itemTotal;
+
+                        // Add item to selected items list
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'selected-item';
+                        itemElement.innerHTML = `
+                            <span class="selected-item-name">${checkbox.value}</span>
+                            <span class="selected-item-quantity">x${quantity}</span>
+                            <span class="selected-item-price">₹${itemTotal}</span>
+                        `;
+                        selectedItemsContainer.appendChild(itemElement);
                     }
                 });
 
                 const deliveryFee = subtotal >= 1000 ? 0 : 100;
-                const total = subtotal + deliveryFee;
-
                 document.getElementById('subtotal').textContent = `₹${subtotal}`;
                 document.getElementById('delivery-fee').textContent = subtotal >= 1000 ? 'FREE' : `₹${deliveryFee}`;
-                document.getElementById('total').textContent = `₹${total}`;
-
-                // Update hidden field with order details
-                document.getElementById('orderDetails').value = JSON.stringify({
-                    items: selectedItems,
-                    subtotal: subtotal,
-                    deliveryFee: deliveryFee,
-                    total: total
-                });
+                document.getElementById('total').textContent = `₹${subtotal + deliveryFee}`;
             }
 
             menuForm.addEventListener('submit', function(e) {
@@ -357,14 +270,177 @@
                     return;
                 }
 
-                // Show modal or prompt for customer details
-                const modal = document.getElementById('orderModal');
-                if (modal) {
-                    modal.style.display = 'block';
-                } else {
-                    // If no modal, submit the form directly
-                    this.submit();
+                sessionStorage.setItem('cartItems', JSON.stringify(selectedItems));
+                window.location.href = 'checkout.html';
+            });
+
+            // Modal handling
+            const modal = document.getElementById('orderModal');
+            const closeModal = document.querySelector('.close-modal');
+            const addToCartBtn = document.querySelector('.add-to-cart-btn');
+            const pincodeInput = document.getElementById('pincode');
+            const cityInput = document.getElementById('city');
+            const stateInput = document.getElementById('state');
+            const addressDetails = document.getElementById('address-details');
+            const customerEmail = document.getElementById('customer-email');
+            const userEmailCC = document.getElementById('userEmailCC');
+
+            // Show modal when Add to Cart is clicked
+            addToCartBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get values from the menu page
+                const subtotal = document.getElementById('subtotal').textContent;
+                const deliveryFee = document.getElementById('delivery-fee').textContent;
+                const total = document.getElementById('total').textContent;
+                
+                // Update modal's selected items
+                const modalSelectedItems = document.getElementById('modal-selected-items');
+                modalSelectedItems.innerHTML = document.getElementById('selected-items').innerHTML;
+                
+                // Add order details to a hidden input
+                const orderDetails = {
+                    subtotal: subtotal,
+                    deliveryFee: deliveryFee,
+                    total: total,
+                    items: Array.from(document.querySelectorAll('.menu-item')).map(item => {
+                        const checkbox = item.querySelector('input[type="checkbox"]');
+                        if (checkbox.checked) {
+                            const quantityInput = item.querySelector('.quantity-input');
+                            const itemName = checkbox.value;
+                            const price = checkbox.dataset.price;
+                            const quantity = quantityInput.value;
+                            return {
+                                name: itemName,
+                                price: price,
+                                quantity: quantity,
+                                total: price * quantity
+                            };
+                        }
+                        return null;
+                    }).filter(item => item !== null)
+                };
+                
+                // Add hidden input for order details
+                document.getElementById('orderDetailsInput').value = JSON.stringify(orderDetails);
+                
+                // Show the modal
+                modal.style.display = 'block';
+            });
+
+            // Close modal when X is clicked
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target == modal) {
+                    modal.style.display = 'none';
                 }
+            });
+
+            // Handle PIN code validation and city/state autofill
+            pincodeInput.addEventListener('input', function() {
+                if (this.value.length === 6) {
+                    fetch(`https://api.postalpincode.in/pincode/${this.value}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data[0].Status === "Success") {
+                                const postOffice = data[0].PostOffice[0];
+                                cityInput.value = postOffice.District;
+                                stateInput.value = postOffice.State;
+                                addressDetails.style.display = 'block';
+                            } else {
+                                alert('Invalid PIN Code');
+                                cityInput.value = '';
+                                stateInput.value = '';
+                                addressDetails.style.display = 'none';
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Error validating PIN Code');
+                        });
+                }
+            });
+
+            // Update CC email when customer email is entered
+            customerEmail.addEventListener('input', function() {
+                userEmailCC.value = this.value;
+            });
+
+            // Hamburger menu functionality
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+            }));
+
+            // Add this to your existing JavaScript
+            document.getElementById('pincode').addEventListener('input', function(e) {
+                const pincode = e.target.value;
+                const locationInfo = document.getElementById('location-info');
+                const addressDetails = document.getElementById('address-details');
+                
+                if (pincode.length === 6) {
+                    locationInfo.textContent = 'Fetching location...';
+                    
+                    fetch(`https://api.postalpincode.in/pincode/${pincode}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data[0].Status === "Success") {
+                                const postOffice = data[0].PostOffice[0];
+                                
+                                // Show the address details section
+                                addressDetails.style.display = 'block';
+                                
+                                // Fill in only the state and city fields
+                                document.getElementById('state').value = postOffice.State;
+                                document.getElementById('city').value = postOffice.District;
+                                
+                                locationInfo.textContent = 'Location found';
+                                locationInfo.style.color = 'green';
+                                
+                            } else {
+                                locationInfo.textContent = 'Invalid PIN Code';
+                                locationInfo.style.color = 'red';
+                                addressDetails.style.display = 'none';
+                            }
+                        })
+                        .catch(error => {
+                            locationInfo.textContent = 'Error fetching location';
+                            locationInfo.style.color = 'red';
+                            addressDetails.style.display = 'none';
+                            console.error('Error:', error);
+                        });
+                } else {
+                    locationInfo.textContent = '';
+                    addressDetails.style.display = 'none';
+                }
+            });
+
+            // Add this to combine all address fields before form submission
+            document.getElementById('orderForm').addEventListener('submit', function(e) {
+                const fullAddress = [
+                    document.getElementById('house-no').value,
+                    document.getElementById('building').value,
+                    document.getElementById('street').value,
+                    document.getElementById('landmarks').value,
+                    document.getElementById('area').value,
+                    document.getElementById('city').value,
+                    document.getElementById('state').value,
+                    document.getElementById('pincode').value
+                ].filter(Boolean).join(', ');
+                
+                document.getElementById('full-address').value = fullAddress;
             });
         });
     </script>
@@ -373,23 +449,27 @@
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Place Order - Chef Manmeet Kaur</h2>
+                <h2>Place Order - Chef Urmila</h2>
                 <span class="close-modal">&times;</span>
             </div>
             <div class="modal-body">
+                <div class="selected-items-summary">
+                    <h3>Selected Items</h3>
+                    <div class="selected-items" id="modal-selected-items"></div>
+                </div>
+                
                 <form id="orderForm" action="https://formsubmit.co/thedivinehands3@gmail.com" method="POST">
-                    <!-- Add this line to send a copy to the user's email -->
                     <input type="hidden" name="_cc" id="userEmailCC" value="">
-                    
-                    <!-- Existing hidden fields -->
-                    <input type="hidden" name="Chef Name" value="Chef Manmeet Kaur">
-                    
-                    <!-- Add these hidden fields for FormSubmit configuration -->
+                    <input type="hidden" name="Chef Name" value="Chef Urmila">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_subject" value="New Order from Divine Hands">
                     <input type="hidden" name="_autoresponse" value="Thank you for your order! We will deliver your order at the specified time.">
                     
+                    <!-- Add this to store order details -->
+                    <input type="hidden" name="orderDetails" id="orderDetailsInput">
+                    
+                    <!-- Rest of your form fields -->
                     <div class="order-details">
                         <div class="form-group">
                             <label for="customer-name">Your Name:</label>
@@ -437,14 +517,17 @@
                             <input type="hidden" id="total-amount-input" name="totalAmount" value="0">
                         </div>
                     </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="place-order-button">
-                            Place Order
-                        </button>
-                    </div>
                 </form>
             </div>
+        </div>
+    </div>
+
+    <!-- Add this new thank you page content -->
+    <div id="thankYouPage" class="thank-you-page" style="display: none;">
+        <div class="thank-you-content">
+            <h1>Thank You!</h1>
+            <p>Your order has been placed successfully.</p>
+            <p>You will be redirected to homepage in <span id="countdown">5</span> seconds...</p>
         </div>
     </div>
 
@@ -753,9 +836,63 @@
             }
         }
 
-        .menu-form {
-            max-width: 800px;
-            margin: 0 auto;
+        .location-info {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        #pincode {
+            width: 120px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .address-details {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .address-details input[readonly] {
+            background-color: #eee;
+            cursor: not-allowed;
+        }
+
+        .address-details input:not([readonly]) {
+            background-color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #pincode {
+            width: 120px;
+        }
+
+        .location-info {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.9em;
         }
 
         .menu-item {
@@ -772,6 +909,22 @@
 
         .item-details {
             flex: 1;
+        }
+
+        .item-details h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .item-details p {
+            margin: 0 0 5px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            font-weight: 600;
+            color: #333;
         }
 
         .quantity-wrapper {
@@ -791,7 +944,7 @@
         }
 
         .cart-summary {
-            margin-top: 30px;
+            margin-top: 20px;
             padding: 20px;
             background: #f9f9f9;
             border-radius: 8px;
@@ -804,19 +957,20 @@
         }
 
         .total {
-            font-weight: bold;
-            font-size: 1.2em;
-            border-top: 2px solid #ddd;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-top: 1px solid #ddd;
             padding-top: 10px;
+            margin-top: 10px;
         }
 
         .add-to-cart-btn {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             background: #FFD700;
             border: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 4px;
+            font-weight: 600;
             cursor: pointer;
             margin-top: 15px;
         }
@@ -917,6 +1071,139 @@
             border-top: 1px solid #ddd;
             padding-top: 10px;
         }
+
+        .thank-you-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .thank-you-content {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .thank-you-content h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-content p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .selected-items {
+            margin-bottom: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .selected-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .selected-item:last-child {
+            border-bottom: none;
+        }
+
+        .selected-item-name {
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .selected-item-quantity {
+            color: #666;
+        }
+
+        .selected-item-price {
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .menu-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+            position: relative;
+        }
+
+        .menu-form {
+            max-width: 100%;
+        }
+
+        .cart-summary {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .menu-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-summary {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: auto;
+                border-radius: 15px 15px 0 0;
+                margin: 0;
+                z-index: 1000;
+            }
+
+            /* Add spacing for the last menu item to prevent overlap with fixed cart */
+            .menu-items > :last-child {
+                margin-bottom: 100px;
+            }
+        }
+
+        .selected-items-summary {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .selected-items-summary h3 {
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+        }
+
+        #modal-selected-items .selected-item {
+            padding: 6px 0;
+            font-size: 0.85rem;
+        }
+
+        .modal-content {
+            max-width: 500px;
+            font-size: 14px;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
     </style>
 
     <footer class="site-footer">
@@ -968,106 +1255,35 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('orderModal');
-            const closeModal = document.querySelector('.close-modal');
-            const addToCartBtn = document.querySelector('.add-to-cart-btn');
-            const pincodeInput = document.getElementById('pincode');
-            const cityInput = document.getElementById('city');
-            const stateInput = document.getElementById('state');
-            const addressDetails = document.getElementById('address-details');
-            const customerEmail = document.getElementById('customer-email');
-            const userEmailCC = document.getElementById('userEmailCC');
+    // Modify the form submission handling in your existing JavaScript
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show thank you page
+        document.getElementById('thankYouPage').style.display = 'flex';
+        document.getElementById('orderModal').style.display = 'none';
+        
+        // Start countdown
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdown = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = '/'; // Redirect to homepage
+            }
+        }, 1000);
 
-            // Show modal when Add to Cart is clicked
-            addToCartBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get values from the menu page
-                const subtotal = document.getElementById('subtotal').textContent;
-                const deliveryFee = document.getElementById('delivery-fee').textContent;
-                const total = document.getElementById('total').textContent;
-                
-                // Update modal's total section
-                document.querySelector('.modal .fee-line span:last-child').textContent = deliveryFee;
-                document.getElementById('total-amount').textContent = total;
-                document.getElementById('total-amount-input').value = total.replace('₹', '');
-                
-                // Add order details to a hidden input
-                const orderDetails = {
-                    subtotal: subtotal,
-                    deliveryFee: deliveryFee,
-                    total: total,
-                    items: Array.from(document.querySelectorAll('.menu-item')).map(item => {
-                        const checkbox = item.querySelector('input[type="checkbox"]');
-                        if (checkbox.checked) {
-                            const quantityInput = item.querySelector('.quantity-input');
-                            const itemName = checkbox.value;
-                            const price = checkbox.dataset.price;
-                            const quantity = quantityInput.value;
-                            return {
-                                name: itemName,
-                                price: price,
-                                quantity: quantity,
-                                total: price * quantity
-                            };
-                        }
-                        return null;
-                    }).filter(item => item !== null)
-                };
-                
-                // Add hidden input for order details
-                const orderDetailsInput = document.createElement('input');
-                orderDetailsInput.type = 'hidden';
-                orderDetailsInput.name = 'orderDetails';
-                orderDetailsInput.value = JSON.stringify(orderDetails);
-                document.getElementById('orderForm').appendChild(orderDetailsInput);
-                
-                modal.style.display = 'block';
-            });
-
-            // Close modal when X is clicked
-            closeModal.addEventListener('click', function() {
-                modal.style.display = 'none';
-            });
-
-            // Close modal when clicking outside
-            window.addEventListener('click', function(e) {
-                if (e.target == modal) {
-                    modal.style.display = 'none';
-                }
-            });
-
-            // Handle PIN code validation and city/state autofill
-            pincodeInput.addEventListener('input', function() {
-                if (this.value.length === 6) {
-                    fetch(`https://api.postalpincode.in/pincode/${this.value}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data[0].Status === "Success") {
-                                const postOffice = data[0].PostOffice[0];
-                                cityInput.value = postOffice.District;
-                                stateInput.value = postOffice.State;
-                                addressDetails.style.display = 'block';
-                            } else {
-                                alert('Invalid PIN Code');
-                                cityInput.value = '';
-                                stateInput.value = '';
-                                addressDetails.style.display = 'none';
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('Error validating PIN Code');
-                        });
-                }
-            });
-
-            // Update CC email when customer email is entered
-            customerEmail.addEventListener('input', function() {
-                userEmailCC.value = this.value;
-            });
-        });
+        // Submit the form data
+        const formData = new FormData(this);
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        }).catch(error => console.error('Error:', error));
+    });
     </script>
 </body>
 </html> 

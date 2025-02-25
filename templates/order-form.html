@@ -1,0 +1,38 @@
+<!-- Order Modal Template -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Place Order - {CHEF_NAME}</h2>
+            <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="selected-items-summary">
+                <h3>Selected Items</h3>
+                <div class="selected-items" id="modal-selected-items"></div>
+            </div>
+
+            <form id="orderForm" action="https://formsubmit.co/thedivinehands3@gmail.com" method="POST">
+                <input type="hidden" name="_cc" id="userEmailCC" value="">
+                <input type="hidden" name="Chef Name" value="{CHEF_NAME}">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Order for Divine Hands">
+                <input type="hidden" name="_autoresponse" value="Thank you for your order! We will deliver your order at the specified time.">
+                
+                <!-- Standard form fields -->
+                <div class="order-details">
+                    <!-- ... existing form fields ... -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Thank You Page Template -->
+<div id="thankYouPage" class="thank-you-page" style="display: none;">
+    <div class="thank-you-content">
+        <h1>Thank You!</h1>
+        <p>Your order has been placed successfully.</p>
+        <p>You will be redirected to homepage in <span id="countdown">5</span> seconds...</p>
+    </div>
+</div> 

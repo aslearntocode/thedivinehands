@@ -1,0 +1,45 @@
+<!-- Menu Section Template -->
+<div class="menu-section">
+    <h2>Menu Selection</h2>
+    <div class="menu-layout">
+        <form id="menuForm" class="menu-form">
+            <!-- Menu Category Template -->
+            <div class="menu-category">
+                <h3>{CATEGORY_NAME}</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-controls">
+                            <input type="checkbox" id="{ITEM_ID}" name="items" value="{ITEM_NAME}" data-price="{PRICE}">
+                        </div>
+                        <div class="item-details">
+                            <h4>{ITEM_TITLE}</h4>
+                            <p>{ITEM_DESCRIPTION}</p>
+                            <span class="price">₹{PRICE}</span>
+                        </div>
+                        <div class="quantity-wrapper">
+                            <input type="number" class="quantity-input" min="1" value="1" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <div class="selected-items" id="selected-items"></div>
+            <div class="summary-item">
+                <span>Subtotal:</span>
+                <span id="subtotal">₹0</span>
+            </div>
+            <div class="summary-item">
+                <span>Delivery Fee:</span>
+                <span id="delivery-fee">₹100</span>
+            </div>
+            <div class="summary-item total">
+                <span>Total:</span>
+                <span id="total">₹0</span>
+            </div>
+            <button type="button" class="add-to-cart-btn">Place Order</button>
+        </div>
+    </div>
+</div> 

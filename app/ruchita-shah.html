@@ -7,6 +7,153 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            /* Chef header adjustments */
+            .chef-header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 20px;
+            }
+
+            .chef-image {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .chef-intro {
+                text-align: center;
+            }
+
+            .chef-features {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            /* Menu section adjustments */
+            .menu-section {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            .menu-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-item {
+                padding: 10px;
+                gap: 10px;
+            }
+
+            .item-details h4 {
+                font-size: 16px;
+            }
+
+            .item-details p {
+                font-size: 14px;
+            }
+
+            .quantity-wrapper {
+                width: 70px;
+            }
+
+            .quantity-input {
+                width: 100%;
+                padding: 5px;
+            }
+
+            /* Cart summary adjustments */
+            .cart-summary {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 15px;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                border-radius: 15px 15px 0 0;
+                margin: 0;
+            }
+
+            .add-to-cart-btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            /* Modal adjustments */
+            .modal {
+                padding: 0;
+                align-items: flex-end;
+            }
+
+            .modal-content {
+                width: 100%;
+                margin: 0;
+                border-radius: 20px 20px 0 0;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            /* Make form elements more touch-friendly */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+
+            .add-to-cart-btn,
+            .place-order-button {
+                padding: 15px;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            /* Ensure selected items are visible */
+            .selected-items {
+                max-height: 120px;
+                overflow-y: auto;
+                margin-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Add some spacing for the last item to prevent overlap with fixed cart */
+            .menu-items > :last-child {
+                margin-bottom: 100px;
+            }
+
+            /* Selected items display */
+            .selected-item {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .chef-features .feature-badge {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .menu-category h3 {
+                font-size: 18px;
+            }
+
+            .price {
+                font-size: 14px;
+            }
+
+            .summary-item {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -745,14 +892,25 @@
 
         @media (max-width: 768px) {
             .chef-header {
+                flex-direction: column;
+                padding: 15px;
                 gap: 20px;
-                padding: 20px;
             }
             
             .chef-image {
-                flex: 0 0 100%;
-                height: auto;
-                aspect-ratio: 1/1;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .chef-intro {
+                text-align: center;
+            }
+
+            .chef-features {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
             }
         }
 

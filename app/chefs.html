@@ -58,7 +58,8 @@
                 <!-- Chef 2 -->
                 <div class="chef-card">
                     <div class="chef-image">
-                        <img src="public/images/Anjali_Broor.jpeg" alt="Chef Anjali Broor">
+                        <img src="public/images/Anjali_Broor.jpeg" alt="Chef Anjali Broor" 
+                             onerror="this.src='https://placehold.co/400x400?text=Chef+Anjali'">
                     </div>
                     <div class="chef-info">
                         <h2>Chef Anjali Broor</h2>
@@ -76,7 +77,7 @@
                         <img src="https://placehold.co/200x200" alt="Chef Payal">
                     </div>
                     <div class="chef-info">
-                        <h2>Chef Payal</h2>
+                        <h2>Chef Payal Agarwal</h2>
                         <p class="specialty">Specialty: Home Like Thali</p>
                         <p class="location"><i class="fas fa-map-marker-alt"></i> Parel, Mumbai</p>
                         <!-- <p class="description">Maria's authentic Mexican recipes have been passed down through generations in her family.</p> -->
@@ -108,7 +109,7 @@
                         <p class="specialty">Specialty: Indian Cuisine</p>
                         <p class="location"><i class="fas fa-map-marker-alt"></i> Parel, Mumbai</p>
                         <!-- <p class="description">Bringing authentic Indian flavors with a modern twist, Priya's dishes are a perfect blend of spices.</p> -->
-                        <!-- <a href="#" class="menu-button">View Menu</a> -->
+                        <a href="chef-priya-patel.html" class="menu-button">View Profile and Menu</a>
                     </div>
                 </div>
             </div>
@@ -134,16 +135,30 @@
     </script>
 
     <style>
+    .chef-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        justify-items: center;
+    }
+
     .chef-card {
         background: white;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        width: 350px;  /* Reduced width */
+        height: 450px; /* Reduced height */
+        display: flex;
+        flex-direction: column;
     }
 
     .chef-image {
         width: 100%;
-        height: 300px;
+        height: 300px; /* Adjusted height */
         overflow: hidden;
     }
 
@@ -151,11 +166,27 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.3s ease;
     }
 
     .chef-info {
         padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .chef-info h2 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .chef-info p {
+        margin: 0;
+    }
+
+    .menu-button {
+        margin-top: auto; /* Push button to bottom */
     }
 
     /* Footer Styles */
@@ -248,6 +279,22 @@
         
         .contact-info p {
             justify-content: center;
+        }
+
+        .chef-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .chef-card {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+        }
+
+        .chef-image {
+            height: 250px;
         }
     }
 
